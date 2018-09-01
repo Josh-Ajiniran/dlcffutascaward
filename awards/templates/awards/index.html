@@ -1,0 +1,115 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block nav %} 
+{% include "awards/nav.html" %} 
+{% endblock nav %} 
+
+{% block header %} 
+{% include "awards/header.html" %} 
+{% endblock header %} 
+
+{% block content %}
+<div class="container">
+    <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text">
+                        <i class="material-icons">school</i>
+                    </h2>
+                    <h5 class="center">Academics</h5>
+
+                    <p class="light">We stand on the tripod stand of "not (being) slothful in business, fervent in spirit, serving the Lord." Mediocrity is an anathema and underachievement is a persona non grata. Life Tutorials is a strategic means of projecting our memberrs towards excellence. Courses drawn from different schools in the University are handled by experienced tutors.</p>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text">
+                        <i class="material-icons">group</i>
+                    </h2>
+                    <h5 class="center">Socials</h5>
+
+                    <p class="light">As far as sociability is concerned, we are no underachievers. We conduct ourselves in decency and decorum as bespeak us as GOD's children in our relationships. We show ourselves friendly however do not forget the divine command to not <em>be unequally yoked together with unbelievers</em>.</p>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text">
+                        <i class="material-icons">home</i>
+                    </h2>
+                    <h5 class="center">Welfare</h5>
+
+                    <p class="light">We do not pay lip service to love, while our actions speak to the contrary. We attend to the present needs of members and ensure their rounded wholeness as we see each member as one part of the whole body of Christ. Thus, endeavouring to keep the unity of faith and fellowship.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <h5 class="header col s12 yellow-text">Best overall brother receiving award from the State Coordinator</h5>
+            </div>
+        </div>
+    </div>
+    <div class="parallax">
+        <img src="{% static 'awards/img/bestbro.jpg' %}" alt="Unsplashed background img 2">
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+
+        <div class="row">
+            <div class="col s12">
+                    <h5 class="center">What we believe</h5>
+                    <p class="left-align light">As a fellowship, we are avowed believers in the totality of completeness of the Bible comprising 39 books of the Old Testament and 27 books of the new Testament. With no strings attached, we take the Bible at face value and adopt its answers as the final authority on all matters of life and living. It remains our Magna Carta, Guidebook in the wilderness of life and code for living. We study it diligently and systematically with an eye to glean truths that will secure our earthly fulfillment and eternal bliss. Are you a sincere seeker of GOD and His truths? Get along with us as we enjoy a blissful Fellowship with the Living Word (Jesus Christ) and reveive an in-depth revelation of the written word. </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <h5 class="header col s12 yellow-text">Best overall sister receiving an award from State Coordinator's wife</h5>
+            </div>
+        </div>
+    </div>
+    <div class="parallax">
+        <img src="{% static 'awards/img/bestsis.jpg' %}" alt="Unsplashed background img 3">
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 center">
+                <h5 class="text-center red-text darken-2">Gallery of past awardee</h5>
+                <div id="idCarousel" class="carousel">
+                    <a class="carousel-item" href="#one!"><img class="materialboxed" src="{% static 'awards/img/bestbro.jpg' %}"></a>
+                    <a class="carousel-item" href="#two!"><img class="materialboxed" src="{% static 'awards/img/bestsis.jpg' %}"></a>
+                    <a class="carousel-item" href="#four!"><img class="materialboxed" src="{% static 'awards/img/mostimprovedbro.jpg' %}"></a>
+                    <a class="carousel-item" href="#five!"><img class="materialboxed" src="{% static 'awards/img/mostimprovedsis.jpg' %}"></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %} 
+
+{% block footer %} 
+{% include "awards/footer.html" %} 
+{% endblock footer %}

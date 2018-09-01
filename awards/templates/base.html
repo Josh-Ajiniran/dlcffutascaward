@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DLCF FUTA</title>
+    <link rel="stylesheet" href="{% static 'awards/css/main.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'awards/materialize/css/materialize.min.css' %}" media="screen,projection" type="text/css">
+    <link rel="stylesheet" href="{% static 'awards/materialize/iconfont/material-icons.css' %}">
+</head>
+<body>
+{% block nav %} 
+
+{% endblock nav %}
+
+{% block header %} 
+
+{% endblock header %}
+
+<main>
+{% block content %}
+
+{% endblock content%}
+<div class="fixed-action-btn">
+    <a href="#idNav" class="btn-floating btn-large red scrollspy">
+        <i class="large material-icons">arrow_upward</i>
+    </a>
+</div>
+</main>
+
+{% block footer %} 
+
+{% endblock footer %}
+
+<script src="{% static 'awards/jquery/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'awards/js/init.js' %}"></script>
+<script src="{% static 'awards/js/main.js' %}"></script>
+<script src="{% static 'awards/materialize/js/materialize.min.js' %}"></script>
+</body>
+</html>

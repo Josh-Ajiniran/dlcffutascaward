@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a id="idModal" class="btn-flat waves-effect waves-light modal-trigger" href="#modal1">Successful application</a>
+<div id="modal1" class="modal modal-trigger">
+    <div class="modal-content">
+        <h3>Application Successful!</h3>
+        <p>Hello, you have successfully applied for the State Coordinator's award. Stay up expecting the award day, you may be among the awardee</p>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect waves-green btn-flat" href="{% url 'register' %}">Return</a></p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,299 @@
+{% extends "base.html" %}
+
+{% block nav %}
+{% include "awards/nav.html" %}
+{% endblock nav %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <table class="striped highlight centered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Surname</th>
+                    <th>Firstname</th>
+                    <th>Gender</th>
+                    <th>Center</th>
+                    <th>Hall</th>
+                    <th>School</th>
+                    <th>Department</th>
+                    <th>Level</th>
+                    <th>Previous CGPA</th>
+                    <th>1st Semester GPA</th>
+                    <th>Current CGPA</th>
+                    <th>Awarded for</th>
+                </tr>   
+            </thead>
+            <tbody>
+            {% if best_overall_male %}
+                <tr>
+                    <td>1</td>
+                    <td>{{ best_overall_male.surname }}</td>
+                    <td>{{ best_overall_male.firstname }}</td>
+                    <td>{{ best_overall_male.gender }}</td>
+                    <td>{{ best_overall_male.center }}</td>
+                    <td>{{ best_overall_male.hall }}</td>
+                    <td>{{ best_overall_male.school }}</td>
+                    <td>{{ best_overall_male.department }}</td>
+                    <td>{{ best_overall_male.level }}</td>
+                    <td>{{ best_overall_male.pcgpa }}</td>
+                    <td>{{ best_overall_male.gpa }}</td>
+                    <td>{{ best_overall_male.ccgpa }}</td>
+                    <td>{{ best_male_exp }}</td>
+                </tr>
+            {% endif %}
+            {% if best_overall_female %}
+                <tr>
+                    <td>2</td>
+                    <td>{{ best_overall_female.surname }}</td>
+                    <td>{{ best_overall_female.firstname }}</td>
+                    <td>{{ best_overall_female.gender }}</td>
+                    <td>{{ best_overall_female.center }}</td>
+                    <td>{{ best_overall_female.hall }}</td>
+                    <td>{{ best_overall_female.school }}</td>
+                    <td>{{ best_overall_female.department }}</td>
+                    <td>{{ best_overall_female.level }}</td>
+                    <td>{{ best_overall_female.pcgpa }}</td>
+                    <td>{{ best_overall_female.gpa }}</td>
+                    <td>{{ best_overall_female.ccgpa }}</td>
+                    <td>{{ best_female_exp }}</td>
+                </tr>
+            {% endif %}
+            {% if best_male_200 %}
+                <tr>
+                    <td>3</td>
+                    <td>{{ best_male_200.surname }}</td>
+                    <td>{{ best_male_200.firstname }}</td>
+                    <td>{{ best_male_200.gender }}</td>
+                    <td>{{ best_male_200.center }}</td>
+                    <td>{{ best_male_200.hall }}</td>
+                    <td>{{ best_male_200.school }}</td>
+                    <td>{{ best_male_200.department }}</td>
+                    <td>{{ best_male_200.level }}</td>
+                    <td>{{ best_male_200.pcgpa }}</td>
+                    <td>{{ best_male_200.gpa }}</td>
+                    <td>{{ best_male_200.ccgpa }}</td>
+                    <td>{{ best_male_200_exp }}</td>
+                </tr>
+            {% endif %}
+            {% if best_female_200 %}
+                <tr>
+                    <td>4</td>
+                    <td>{{ best_female_200.surname }}</td>
+                    <td>{{ best_female_200.firstname }}</td>
+                    <td>{{ best_female_200.gender }}</td>
+                    <td>{{ best_female_200.center }}</td>
+                    <td>{{ best_female_200.hall }}</td>
+                    <td>{{ best_female_200.school }}</td>
+                    <td>{{ best_female_200.department }}</td>
+                    <td>{{ best_female_200.level }}</td>
+                    <td>{{ best_female_200.pcgpa }}</td>
+                    <td>{{ best_female_200.gpa }}</td>
+                    <td>{{ best_female_200.ccgpa }}</td>
+                    <td>{{ best_female_200_exp }}</td>
+                </tr>
+            {% endif %}
+            {% if best_male_300 %}
+                <tr>
+                    <td>5</td>
+                    <td>{{ best_male_300.surname }}</td>
+                    <td>{{ best_male_300.firstname }}</td>
+                    <td>{{ best_male_300.gender }}</td>
+                    <td>{{ best_male_300.center }}</td>
+                    <td>{{ best_male_300.hall }}</td>
+                    <td>{{ best_male_300.school }}</td>
+                    <td>{{ best_male_300.department }}</td>
+                    <td>{{ best_male_300.level }}</td>
+                    <td>{{ best_male_300.pcgpa }}</td>
+                    <td>{{ best_male_300.gpa }}</td>
+                    <td>{{ best_male_300.ccgpa }}</td>
+                    <td>{{ best_male_300_exp }}</td>
+                </tr>
+            {% endif %}
+            {% if best_female_300 %}
+                <tr>
+                    <td>6</td>
+                    <td>{{ best_female_300.surname }}</td>
+                    <td>{{ best_female_300.firstname }}</td>
+                    <td>{{ best_female_300.gender }}</td>
+                    <td>{{ best_female_300.center }}</td>
+                    <td>{{ best_female_300.hall }}</td>
+                    <td>{{ best_female_300.school }}</td>
+                    <td>{{ best_female_300.department }}</td>
+                    <td>{{ best_female_300.level }}</td>
+                    <td>{{ best_female_300.pcgpa }}</td>
+                    <td>{{ best_female_300.gpa }}</td>
+                    <td>{{ best_female_300.ccgpa }}</td>
+                    <td>{{ best_female_300_exp }}</td>
+                </tr>
+            {% endif %}
+            {% if all_first_class %}
+                {% for fc in all_first_class %}
+                    <tr>
+                        <td></td>>
+                        <td>{{ fc.surname }}</td>>
+                        <td>{{ fc.firstname }}</td>
+                        <td>{{ fc.gender }}</td>
+                        <td>{{ fc.center }}</td>
+                        <td>{{ fc.hall }}</td>
+                        <td>{{ fc.school }}</td>
+                        <td>{{ fc.department }}</td>
+                        <td>{{ fc.level }}</td>
+                        <td>{{ fc.pcgpa }}</td>
+                        <td>{{ fc.gpa }}</td>
+                        <td>{{ fc.ccgpa }}</td>
+                        <td>{{ all_first_class_exp }}</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            {% if five_dot_gpa %}
+                {% for fd in five_dot_gpa %}
+                    <tr>
+                        <td></td>
+                        <td>{{ fd.surname }}</td>
+                        <td>{{ fd.firstname }}</td>
+                        <td>{{ fd.gender }}</td>
+                        <td>{{ fd.center }}</td>
+                        <td>{{ fd.hall }}</td>
+                        <td>{{ fd.school }}</td>
+                        <td>{{ fd.department }}</td>
+                        <td>{{ fd.level }}</td>
+                        <td>{{ fd.pcgpa }}</td>
+                        <td>{{ fd.gpa }}</td>
+                        <td>{{ fd.ccgpa }}</td>
+                        <td>{{ five_dot_gpa_exp }}</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            {% if first_35gpa_3rd_class %}
+                <tr>
+                    <td></td>
+                    <td>{{ first_35gpa_3rd_class.surname }}</td>
+                    <td>{{ first_35gpa_3rd_class.firstname }}</td>
+                    <td>{{ first_35gpa_3rd_class.gender }}</td>
+                    <td>{{ first_35gpa_3rd_class.center }}</td>
+                    <td>{{ first_35gpa_3rd_class.hall }}</td>
+                    <td>{{ first_35gpa_3rd_class.school }}</td>
+                    <td>{{ first_35gpa_3rd_class.department }}</td>
+                    <td>{{ first_35gpa_3rd_class.level }}</td>
+                    <td>{{ first_35gpa_3rd_class.pcgpa }}</td>
+                    <td>{{ first_35gpa_3rd_class.gpa }}</td>
+                    <td>{{ first_35gpa_3rd_class.ccgpa }}</td>
+                    <td>{{ first_35gpa_3rd_class_exp }}</td>
+                </tr>
+            {% endif %}
+            {% if first_40gpa_2nd_class_lower %}
+                <tr>
+                    <td></td>
+                    <td>{{ first_40gpa_2nd_class_lower.surname }}</td>
+                    <td>{{ first_40gpa_2nd_class_lower.firstname }}</td>
+                    <td>{{ first_40gpa_2nd_class_lower.gender }}</td>
+                    <td>{{ first_40gpa_2nd_class_lower.center }}</td>
+                    <td>{{ first_40gpa_2nd_class_lower.hall }}</td>
+                    <td>{{ first_40gpa_2nd_class_lower.school }}</td>
+                    <td>{{ first_40gpa_2nd_class_lower.department }}</td>
+                    <td>{{ first_40gpa_2nd_class_lower.level }}</td>
+                    <td>{{ first_40gpa_2nd_class_lower.pcgpa }}</td>
+                    <td>{{ first_40gpa_2nd_class_lower.gpa }}</td>
+                    <td>{{ first_40gpa_2nd_class_lower.ccgpa }}</td>
+                    <td>{{ first_40gpa_2nd_class_lower_exp }}</td>
+                </tr>
+            {% endif %}
+            {% if best_mee_male %}
+                <tr>
+                    <td></td>>
+                    <td>{{ best_mee_male.surname }}</td>>
+                    <td>{{ best_mee_male.firstname }}</td>
+                    <td>{{ best_mee_male.gender }}</td>
+                    <td>{{ best_mee_male.center }}</td>
+                    <td>{{ best_mee_male.hall }}</td>
+                    <td>{{ best_mee_male.school }}</td>
+                    <td>{{ best_mee_male.department }}</td>
+                    <td>{{ best_mee_male.level }}</td>
+                    <td>{{ best_mee_male.pcgpa }}</td>
+                    <td>{{ best_mee_male.gpa }}</td>
+                    <td>{{ best_mee_male.ccgpa }}</td>
+                    <td>{{ best_mee_male_exp }}</td>
+                </tr>
+            {% endif %}
+            {% if best_mee_female %}
+                <tr>
+                    <td></td>>status
+                    <td>{{ best_mee_female.surname }}</td>>
+                    <td>{{ best_mee_female.firstname }}</td>
+                    <td>{{ best_mee_female.gender }}</td>
+                    <td>{{ best_mee_female.center }}</td>
+                    <td>{{ best_mee_female.hall }}</td>
+                    <td>{{ best_mee_female.school }}</td>
+                    <td>{{ best_mee_female.department }}</td>
+                    <td>{{ best_mee_female.level }}</td>
+                    <td>{{ best_mee_female.pcgpa }}</td>
+                    <td>{{ best_mee_female.gpa }}</td>
+                    <td>{{ best_mee_female.ccgpa }}</td>
+                    <td>{{ best_mee_female_exp }}</td>
+                </tr>
+            {% endif %}
+            {% if best_mts_male %}
+                <tr>
+                    <td></td>>
+                    <td>{{ best_mts_male.surname }}</td>>
+                    <td>{{ best_mts_male.firstname }}</td>
+                    <td>{{ best_mts_male.gender }}</td>
+                    <td>{{ best_mts_male.center }}</td>
+                    <td>{{ best_mts_male.hall }}</td>
+                    <td>{{ best_mts_male.school }}</td>
+                    <td>{{ best_mts_male.department }}</td>
+                    <td>{{ best_mts_male.level }}</td>
+                    <td>{{ best_mts_male.pcgpa }}</td>
+                    <td>{{ best_mts_male.gpa }}</td>
+                    <td>{{ best_mts_male.ccgpa }}</td>
+                    <td>{{ best_mts_male_exp }}</td>
+                </tr>
+            {% endif %}
+            {% if best_mts_female %}
+                <tr>
+                    <td></td>
+                    <td>{{ best_mts_female.surname }}</td>>
+                    <td>{{ best_mts_female.firstname }}</td>
+                    <td>{{ best_mts_female.gender }}</td>
+                    <td>{{ best_mts_female.center }}</td>
+                    <td>{{ best_mts_female.hall }}</td>
+                    <td>{{ best_mts_female.school }}</td>
+                    <td>{{ best_mts_female.department }}</td>
+                    <td>{{ best_mts_female.level }}</td>
+                    <td>{{ best_mts_female.pcgpa }}</td>
+                    <td>{{ best_mts_female.gpa }}</td>
+                    <td>{{ best_mts_female.ccgpa }}</td>
+                    <td>{{ best_mts_female_exp }}</td>
+                </tr>
+            {% endif %}
+            {% if best_pds_score %}
+                <tr>
+                    <td></td>
+                    <td>{{ best_pds_score.surname }}</td>>
+                    <td>{{ best_pds_score.firstname }}</td>
+                    <td>{{ best_pds_score.gender }}</td>
+                    <td>{{ best_pds_score.center }}</td>
+                    <td>{{ best_pds_score.hall }}</td>
+                    <td>{{ best_pds_score.school }}</td>
+                    <td>{{ best_pds_score.department }}</td>
+                    <td>{{ best_pds_score.level }}</td>
+                    <td>{{ best_pds_score.pcgpa }}</td>
+                    <td>{{ best_pds_score.gpa }}</td>
+                    <td>{{ best_pds_score.ccgpa }}</td>
+                    <td>{{ best_pds_score_exp }}</td>
+                </tr>
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+    <p>
+        <a class="btn btn-lg btn-primary" role="button" id="printBtn" href="">Print</a>
+    </p>
+</div>
+{% endblock content %}
+
+{% block footer %}
+{% include "awards/footer.html" %}
+{% endblock footer %}

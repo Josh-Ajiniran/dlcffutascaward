@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% load material_form %}
+
+{% block nav %}
+{% include "awards/nav.html" %}
+{% endblock nav %}
+
+{% block content %}
+<div class="container ">
+    <div class="row">
+        <div class="col s12 m7">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <form action="{% url 'register' %}" method="post">
+                    {% csrf_token %}
+                        {% form form=form %}
+
+                        {% endform %}
+                        <input class="btn-large red darken-2 modal-trigger" id="submitbtn" type="submit" value="Submit" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m5">
+            <div class="row">
+                <div class="card hoverable">
+                    <div class="card-content">
+                        <span class="card-title">Members who have applied</span>
+                        {% if registered_members_list %}
+                            <ul class="collection">
+                            {% for members in registered_members_list|slice:":5" %}
+                                <li class="collection-item avatar">
+                                    <i class="material-icons circle red darken-2">account_circle</i>
+                                    {{ members.surname }} {{ members.firstname }} applied on {{ members.timestamp|date:"D d M Y h:ia" }}</li>
+                            {% endfor %}
+                            </ul>
+                        {% else %}
+                            No application yet.
+                        {% endif %}
+                        <div>
+                        {% if registered_members_list|length > 5 %}
+                            <span class="card-title activator left text-darken-4 badge">And {{ registered_members_list|length|add:"-5" }} other{{ registered_members_list|length|add:"-5"|pluralize }} <i class="material-icons activator right">more_vert</i></span>
+                        {% endif %}
+                        </div><br>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Others<i class="material-icons right">close</i></span>
+                    {% for members in registered_members_list|dictsortreversed:"timestamp"|slice:"5:" %}
+                        <ul class="collection">
+                            <li class="collection-item avatar">
+                                <i class="material-icons circle red darken-2">account_circle</i>
+                                {{ members.surname }} {{ members.firstname }} applied on {{ members.timestamp|date:"D d M Y h:ia" }}
+                            </li>
+                        </ul>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block footer %}
+{% include "awards/footer.html" %}
+{% endblock footer %}
+    

@@ -1,0 +1,19 @@
+{% load static %}
+
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center white-text text-lighten-2">State Coordinator's Award</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Rewarding academic excellence among the Dean's Listers Christ Followers.</h5>
+      </div>
+      <div class="row center">
+        <a href="{% url 'register' %}" id="download-button" class="btn-large waves-effect waves-light red darken-2">Apply now</a>
+      </div>
+    </div>
+  </div>
+  <div class="parallax">
+    <img src="{% static 'awards/img/awardpix.jpg' %}" alt="Unsplashed background img 1">
+  </div>
+</div>
